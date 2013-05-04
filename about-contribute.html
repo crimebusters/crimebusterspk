@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Crime Report</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <style type="text/css">
+            .popup {
+                width:200px;
+                height:100px;
+                position:absolute;
+                top:50%;
+                left:50%;
+                margin:-50px 0 0 -100px; /* [-(height/2)px 0 0 -(width/2)px] */
+                display:none;
+                z-index: 9999;
+            }
+
+            .sub-header h2
+            {
+                margin: 0;
+            }
+
+        </style>
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css">
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/redmond/jquery-ui.css" />
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.ptTimeSelect.css" />
+        <script type="text/javascript" src="js/jquery.ptTimeSelect.js"></script>
+
+        <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>-->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+    </head>
+
+
+    <body style="background-color: #FFF;">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="top-bar">
+            <h1 style="margin-top:0; float:left;"><img src="img/Logo_CrimeBusters.png" height="80" /></h1>
+
+         </div>
+
+         <div class="sub-header container">
+            <h2>About Crime Busters</h2>
+         </div>
+
+         <div class="cr-content"><p>Crime Busters was created with the aim of reducing the incidence of crime in Karachi by collecting crime data on a localized level and informing law enforcement agencies and the general public about criminal activities in these areas. With Crime Busters, we intend to make reporting the crime a simple process and over time use this data to make a safer and more livable Karachi.</p>
+
+        <p>Users can anonymously report a crime by pin-pointing its location on the map and recording how the event took place. This data is collected and controlled by moderators, and is then made available for public viewing so that local residents may take precautionary measures in the future. At the same time, local law enforcement agencies can also use this data to track down hot-spots of criminal activities and take security measures accordingly.</p>
+
+        <p>The Crime Busters project has solely been initiated as a not-for-profit, community project for the citizens of Karachi. We intend to implement the project across the country after starting off in Karachi. The project is intended to be crowd-sourced so that it can be improved upon by the software developers in the country. Developers are invited to contribute ideas and time to the project so that it can be developed further. Similarly, volunteers are invited to act as moderators and verify the authenticity of reported crimes.</p>
+
+        <p>We owe what we are to this country. It is our duty to give it something back in return.</p>
+
+        <h3 style="color:#233238; font-size:24px; font-weight:bold;">Crime in Karachi</h3>
+
+        <p>Karachi has witnessed an unprecedented growth in crime rates over the past years, yet no effective measures have been taken to provide a more livable environment for its population. Part of the reason for that is the lack of reporting of crime events as the victims worry about retribution or simply do not want to go through the hassle of registering an FIR due to the overly-complex and convoluted processes employed at police stations.</p>
+
+        <p>According to the Citizens Police Liaison Committee (CPLC) crime has grown exponentially in Karachi over the last 2 decades.  All forms of crime, killings, kidnappings or vehicle and mobile thefts, have witnessed unprecedented growth over the years to the point that the bustling metropolis with a population of approximately 20 million is now considered one of the most dangerous cities in the world.</p>
+
+        <p>From a low of 88 reported killings per year on average between 1999 and 2003, the number of homicides has mushroomed and continues to grow at an uncontrollable rate. Using 2005 as the base year, killing by gunshot has increased at a rate of +50% per year over the last seven years; 2012 alone saw 2,172 total reported killings, which comes to one person being killed every four hours that year!</p>
+
+        <p>Total incidents of kidnapping in the last six years have increased by a whopping 140% versus the total incidents of kidnapping in the previous 17 years.  Similarly, a car and motorbike was stolen or snatched every 23 and 12 minutes respectively, in 2012. (1)</p>
+
+        <p>Law enforcement agencies like the CPLC are trying their best to reduce incidences of such crime, yet, they need our help in reporting and identifying crimes so that they may take effective measures. With the help of Crime Busters, we aim to do just that.</p>
+
+        <p><a href="http://tribune.com.pk/story/535525/living-in-fear-for-businesses-and-citizens-of-karachi-crime-conquers-all/">(1)  http://tribune.com.pk/story/535525/living-in-fear-for-businesses-and-citizens-of-karachi-crime-conquers-all/</a></p>
+
+        
+        <hr style="border-color: #e5e7e7; margin:40px 0;" />
+
+        <h3 style="color:#233238; font-size:24px; font-weight:bold; clear:both;">TEAM</h3>
+
+        <div class="cr-team-mem">
+            <img src="" />
+            <p>Azhar</p>
+        </div>
+
+        <div class="cr-team-mem">
+            <img src="" />
+            <p>Uzair</p>
+        </div>
+
+        <div class="cr-team-mem">
+            <img src="" />
+            <p>Wamiq</p>
+        </div>
+
+        <div class="cr-team-mem">
+            <img src="" />
+            <p>Haris</p>
+        </div>
+
+        <div class="cr-team-mem">
+            <img src="" />
+            <p>Waqas</p>
+        </div>
+
+        <div class="cr-team-mem">
+            <img src="" />
+            <p>You?</p>
+        </div>
+
+        <div style="clear:both"></div>
+
+        </div>
+
+        <div class="in-sidebar">
+            <p>Want to contribute for community?</p>
+            <a href="#" class="btn-contribute">Become a part of project</a>
+        </div>
+
+        
+
+
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
