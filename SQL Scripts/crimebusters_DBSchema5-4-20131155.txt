@@ -1,0 +1,83 @@
+CREATE DATABASE `crimereports`;
+
+use `crimereports`;
+
+CREATE TABLE `tbl_roles` (                               
+             `Role_ID` bigint(20) NOT NULL AUTO_INCREMENT,          
+             `Role_Name` varchar(50) NOT NULL,                      
+             `Role_Description` varchar(2000) NOT NULL,             
+             `Created_On` datetime DEFAULT NULL,                    
+             `Created_By` varchar(50) NOT NULL,                     
+             PRIMARY KEY (`Role_ID`)                                
+           ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `tbl_users` (                                                                                
+             `User_ID` bigint(20) NOT NULL AUTO_INCREMENT,                                                           
+             `First_Name` varchar(50) NOT NULL,                                                                      
+             `Last_Name` varchar(50) NOT NULL,                                                                       
+             `User_Name` varchar(50) NOT NULL,                                                                       
+             `Password` varchar(100) NOT NULL,                                                                       
+             `Role_ID` bigint(20) NOT NULL,                                                                          
+             `Active` tinyint(1) NOT NULL DEFAULT '0',                                                               
+             `Created_On` datetime NOT NULL,                                                                         
+             `Created_By` varchar(50) NOT NULL,                                                                      
+             `Last_Modified_On` datetime DEFAULT NULL,                                                               
+             `Last_Modified_By` varchar(50) DEFAULT NULL,                                                            
+             `Locked` tinyint(1) NOT NULL DEFAULT '0',                                                               
+             PRIMARY KEY (`User_ID`),                                                                                
+             KEY `FK_tbl_users` (`Role_ID`),                                                                         
+             CONSTRAINT `FK_tbl_users` FOREIGN KEY (`Role_ID`) REFERENCES `tbl_roles` (`Role_ID`) ON DELETE CASCADE  
+           ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `tbl_categories` (                          
+                  `Category_ID` bigint(20) NOT NULL AUTO_INCREMENT,      
+                  `Category_Name` varchar(50) NOT NULL,                  
+                  `Category_Description` varchar(3000) DEFAULT NULL,     
+                  `Active` tinyint(1) NOT NULL DEFAULT '0',              
+                  `Created_On` datetime NOT NULL,                        
+                  `Created_By` varchar(50) NOT NULL,                     
+                  PRIMARY KEY (`Category_ID`)                            
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `tbl_crimes` (                                                                                                    
+              `Crime_ID` bigint(20) NOT NULL AUTO_INCREMENT,                                                                               
+              `Crime_Category_ID` bigint(20) NOT NULL,                                                                                     
+              `Crime_Description` varchar(3000) DEFAULT NULL,                                                                              
+              `Location_Latitude` varchar(10) DEFAULT NULL,                                                                                
+              `Location_Longitude` varchar(10) DEFAULT NULL,                                                                               
+              `Votes_For` int(11) NOT NULL,                                                                                                
+              `Votes_Against` int(11) NOT NULL,                                                                                            
+              `Reported_By_User_IP` varchar(50) DEFAULT NULL,                                                                              
+              `Reported_By_User_Mac` varchar(50) DEFAULT NULL,                                                                             
+              `Crime_Date` date NOT NULL,                                                                                                  
+              `Crime_Time` time DEFAULT NULL,                                                                                              
+              `Other_Detail` varchar(2000) DEFAULT NULL,                                                                                   
+              `Severity_ID` bigint(20) DEFAULT NULL,                                                                                       
+              `Created_On` datetime NOT NULL,                                                                                              
+              `Created_By` varchar(50) NOT NULL,                                                                                           
+              `Approved` tinyint(1) DEFAULT NULL,                                                                                          
+              `Approved_By` bigint(20) DEFAULT NULL,                                                                                       
+              `Approval_DateTime` datetime DEFAULT NULL,                                                                                   
+              `Location_Name` varchar(3000) DEFAULT NULL,                                                                                  
+              PRIMARY KEY (`Crime_ID`),                                                                                                    
+              KEY `FK_tbl_crimes` (`Crime_Category_ID`),                                                                                   
+              KEY `FK_tbl_crimes_Users` (`Approved_By`),                                                                                   
+              CONSTRAINT `FK_tbl_crimes` FOREIGN KEY (`Crime_Category_ID`) REFERENCES `tbl_categories` (`Category_ID`) ON DELETE CASCADE,  
+              CONSTRAINT `FK_tbl_crimes_Users` FOREIGN KEY (`Approved_By`) REFERENCES `tbl_users` (`User_ID`)                              
+            ) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;       
+
+CREATE TABLE `tbl_tags` (                                                                                   
+            `Crime_Tag_ID` bigint(20) NOT NULL AUTO_INCREMENT,                                                        
+            `Crime_Tag_Name` varchar(50) NOT NULL,                                                                    
+            `Crime_ID` bigint(20) DEFAULT NULL,                                                                       
+            `Created_On` datetime NOT NULL,                                                                           
+            `Created_By` varchar(50) NOT NULL,                                                                        
+            PRIMARY KEY (`Crime_Tag_ID`),                                                                             
+            KEY `FK_tbl_tags` (`Crime_ID`),                                                                           
+            CONSTRAINT `FK_tbl_tags` FOREIGN KEY (`Crime_ID`) REFERENCES `tbl_crimes` (`Crime_ID`) ON DELETE CASCADE  
+          ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE VIEW `crimereports`.`vw_crimes` 
+		AS 
+		(SELECT t1.*, t2.Category_Name
+		FROM tbl_crimes AS t1 INNER JOIN tbl_categories AS t2 ON t1.Crime_Category_ID = t2.Category_ID);
