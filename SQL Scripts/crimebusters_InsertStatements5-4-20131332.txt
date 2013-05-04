@@ -1,0 +1,247 @@
+insert into crimereports.tbl_roles 
+	(Role_Name, Role_Description, Created_On, 
+	Created_By
+	)
+	values
+	( 'Moderator', "To approve or decline reported crimes", '2013/5/4', 
+	'appadmin'
+	);
+
+insert into crimereports.tbl_users 
+	(First_Name, Last_Name, User_Name, 
+	Password, 
+	Role_ID, 
+	Active, 
+	Created_On, 
+	Created_By, 	
+	Locked
+	)
+	values
+	( 'Farrukh', 'Omar', 'fomar@spurglobal.com', 
+	'dev.123', 
+	'3', 
+	'1', 
+	'2013/5/4', 
+	'appadmin', 
+	'0'
+	);
+
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Extortion?', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Assault?', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Ransom?', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Robbery', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Illegal immigration', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Arson?', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Terrorism tactics', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Theft?', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Torture?', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Domestic violence', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Police impersonation', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Kidnappings?', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Murder', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Money laundering?', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Corruption?', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Bomb threat', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
+
+insert into crimereports.tbl_categories 
+	(Category_Name, Category_Description, 
+	Active, 
+	Created_On, 
+	Created_By
+	)
+	values
+	( 'Death threat', 'Category_Description', 
+	'1', 
+	'2013/5/4', 
+	'appadmin' 
+	);
